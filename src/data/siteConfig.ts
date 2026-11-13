@@ -507,3 +507,4 @@ export const contactFAQs: FAQItem[] = [
       'For projects across Dombivli, Kalyan, Thane, Navi Mumbai, and surrounding regions, we can typically mobilize our drilling crew and equipment within 24 to 48 hours following quotation approval and site readiness confirmation.',
   },
 ];
+

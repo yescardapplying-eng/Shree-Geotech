@@ -64,3 +64,4 @@ export function Accordion({ items, idPrefix = 'faq' }: AccordionProps) {
     </div>
   );
 }
+

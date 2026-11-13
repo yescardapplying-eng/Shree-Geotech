@@ -13,3 +13,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${siteConfig.domain}/sitemap.xml`,
   };
 }
+

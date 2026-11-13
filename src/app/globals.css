@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #102C4E;
+  --color-navy-dark: #0A1E35;
+  --color-navy-light: #183C66;
+  --color-navy-surface: #133257;
+  --color-orange: #F47B20;
+  --color-orange-hover: #D9650D;
+  --color-orange-light: #FFF4EC;
+  --color-slate-grey: #64748B;
+  --color-light-grey: #F3F6F9;
+  --color-border-subtle: #E2E8F0;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #102C4E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: #102C4E;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle WhatsApp Shake Keyframe */
+@keyframes whatsapp-vibe {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  20% {
+    transform: rotate(10deg) scale(1.06);
+  }
+  30% {
+    transform: rotate(-8deg) scale(1.04);
+  }
+  40% {
+    transform: rotate(8deg) scale(1.04);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-whatsapp-vibe {
+  animation: whatsapp-vibe 2s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-whatsapp-vibe {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F6F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }

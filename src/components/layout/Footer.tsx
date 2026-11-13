@@ -9,20 +9,25 @@ export function Footer() {
     <footer className="bg-[#102C4E] text-white border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Column 1: Brand & Bio */}
+          {/* Column 1: Brand & Prominent Logo */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block bg-white p-2 rounded-md">
-              <div className="relative w-48 h-10">
+            <Link
+              href="/"
+              className="inline-block bg-white px-3.5 py-2.5 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+              aria-label="Shree Geotech"
+            >
+              <div className="relative w-64 sm:w-72 h-16 sm:h-18">
                 <Image
                   src={siteConfig.brandAssets.logo}
                   alt="Shree Geotech Logo"
                   fill
-                  sizes="192px"
-                  className="object-contain"
+                  sizes="(max-width: 640px) 256px, 288px"
+                  className="object-contain object-left"
+                  priority
                 />
               </div>
             </Link>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed pt-1">
               Specialized geotechnical investigation and soil testing services for construction,
               structural foundations, infrastructure projects, and architectural planning across the
               Mumbai Metropolitan Region.
@@ -42,7 +47,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5"
+                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-[#F47B20]" />
                   <span>Home</span>
@@ -51,7 +56,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5"
+                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-[#F47B20]" />
                   <span>Our Services</span>
@@ -60,7 +65,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5"
+                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-[#F47B20]" />
                   <span>About Us</span>
@@ -69,7 +74,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5"
+                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-[#F47B20]" />
                   <span>Contact Us</span>
@@ -106,7 +111,7 @@ export function Footer() {
                 <li key={service.id}>
                   <Link
                     href={`/services#${service.slug}`}
-                    className="hover:text-[#F47B20] transition-colors inline-flex items-start gap-1.5"
+                    className="hover:text-[#F47B20] transition-colors inline-flex items-start gap-1.5 hover-lift"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-[#F47B20] mt-0.5 shrink-0" />
                     <span>{service.title}</span>
@@ -153,7 +158,7 @@ export function Footer() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-sm text-xs font-semibold text-white bg-[#F47B20] hover:bg-[#D9650D] transition-colors"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-md text-xs font-semibold text-white bg-[#F47B20] hover:bg-[#D9650D] transition-all hover-lift active:scale-95"
               >
                 Contact Now
               </Link>
@@ -180,4 +185,3 @@ export function Footer() {
     </footer>
   );
 }
-

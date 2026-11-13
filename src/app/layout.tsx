@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
+import { MouseFollower } from '@/components/common/MouseFollower';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/data/siteConfig';
 
@@ -89,6 +90,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#102C4E] antialiased overflow-x-hidden selection:bg-[#F47B20] selection:text-white">
+        <MouseFollower />
         <Header />
         <main className="flex-1 w-full overflow-x-hidden">{children}</main>
         <Footer />

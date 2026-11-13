@@ -8,7 +8,7 @@ export function LocationsSection() {
     <section className="py-16 sm:py-20 bg-[#F3F6F9]" id="service-locations">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#102C4E] text-xs font-bold uppercase tracking-wider shadow-2xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#102C4E] text-xs font-bold uppercase tracking-wider shadow-2xs hover-lift">
             Regional Coverage
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#102C4E] tracking-tight">
@@ -25,13 +25,13 @@ export function LocationsSection() {
           {siteConfig.locations.map((loc) => (
             <div
               key={loc.name}
-              className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-[#F47B20]/40 transition-all flex items-start gap-3.5"
+              className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs hover-lift hover:border-[#F47B20]/50 transition-all flex items-start gap-3.5 group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0 mt-0.5">
-                <MapPin className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F47B20] group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                <MapPin className="w-5 h-5 transition-transform duration-300" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-base font-bold text-[#102C4E]">
+                <h3 className="text-base font-bold text-[#102C4E] group-hover:text-[#F47B20] transition-colors">
                   Soil Testing in {loc.name}
                 </h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{loc.note}</p>
@@ -41,7 +41,7 @@ export function LocationsSection() {
         </div>
 
         {/* Local Geological Brief (Natural Local SEO) */}
-        <div className="mt-10 p-6 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm leading-relaxed max-w-4xl mx-auto">
+        <div className="mt-10 p-6 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm leading-relaxed max-w-4xl mx-auto shadow-2xs hover:shadow-md transition-shadow">
           <p className="font-semibold text-[#102C4E] mb-2">
             Local Geological Context Across Mumbai Metropolitan Region:
           </p>
@@ -56,10 +56,10 @@ export function LocationsSection() {
             <span className="text-xs text-slate-500">Need site investigation in your area?</span>
             <Link
               href="/contact"
-              className="text-xs font-bold text-[#F47B20] hover:text-[#D9650D] inline-flex items-center gap-1"
+              className="text-xs font-bold text-[#F47B20] hover:text-[#D9650D] inline-flex items-center gap-1 group"
             >
               <span>Contact Now</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -67,4 +67,3 @@ export function LocationsSection() {
     </section>
   );
 }
-

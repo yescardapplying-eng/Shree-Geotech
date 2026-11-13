@@ -23,7 +23,7 @@ export function WhyChooseUs() {
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F3F6F9] text-[#102C4E] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F3F6F9] text-[#102C4E] text-xs font-bold uppercase tracking-wider hover-lift">
             Our Advantages
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#102C4E] tracking-tight">
@@ -44,10 +44,10 @@ export function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#F47B20]/40 hover:shadow-lg transition-all duration-300 group"
+                className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#F47B20]/40 hover-lift group transition-all duration-300 cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#F3F6F9] group-hover:bg-[#102C4E] text-[#102C4E] group-hover:text-[#F47B20] flex items-center justify-center transition-colors duration-300 mb-4">
-                  <IconComponent className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-lg bg-[#F3F6F9] group-hover:bg-[#102C4E] text-[#102C4E] group-hover:text-[#F47B20] flex items-center justify-center transition-all duration-300 mb-4 group-hover:rotate-6 group-hover:scale-110">
+                  <IconComponent className="w-6 h-6 transition-transform duration-300" />
                 </div>
                 <h3 className="text-lg font-bold text-[#102C4E] mb-2 group-hover:text-[#F47B20] transition-colors">
                   {point.title}
@@ -61,4 +61,3 @@ export function WhyChooseUs() {
     </section>
   );
 }
-

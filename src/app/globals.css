@@ -63,9 +63,63 @@ body {
   transform-origin: bottom right;
 }
 
+/* Fade In Up Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Card & Button Hover Micro-Interactions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px -6px rgba(16, 44, 78, 0.12), 0 8px 12px -4px rgba(16, 44, 78, 0.08);
+}
+
+.hover-icon-wiggle:hover svg {
+  transform: scale(1.12) rotate(4deg);
+  transition: transform 0.25s ease;
+}
+
+/* Service Image Zoom Effect */
+.service-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.service-img-wrapper img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.service-img-wrapper:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.03);
+}
+
+/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .animate-whatsapp-vibe {
+  .animate-whatsapp-vibe,
+  .animate-fade-in-up {
     animation: none;
+  }
+  .hover-lift:hover {
+    transform: none;
+  }
+  .service-img-wrapper:hover img {
+    transform: none;
   }
   html {
     scroll-behavior: auto;

@@ -78,30 +78,34 @@ export default function ServicesPage() {
                   isEven ? 'lg:flex-row-reverse' : ''
                 }`}
               >
-                {/* Left/Right Column: Image & Tech Specs Card */}
+                {/* Left/Right Column: Image & Tech Specs Card with Normal Zoom Hover Animation */}
                 <div
                   className={`lg:col-span-5 space-y-6 ${
                     isEven ? 'lg:order-2' : 'lg:order-1'
                   }`}
                 >
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-100 aspect-4/3 sm:aspect-16/11">
+                  <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-slate-200 bg-slate-100 aspect-4/3 sm:aspect-16/11 service-img-wrapper group cursor-pointer transition-all duration-500 hover:-translate-y-1.5">
                     <Image
                       src={service.image}
                       alt={`${service.title} - Geotechnical investigation by Shree Geotech`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover"
+                      className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#102C4E]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   </div>
 
                   {/* Technical Parameters Box */}
-                  <div className="bg-[#F3F6F9] rounded-xl p-5 border border-slate-200 space-y-3">
+                  <div className="bg-[#F3F6F9] rounded-xl p-5 border border-slate-200 space-y-3 shadow-2xs hover:shadow-md transition-shadow">
                     <h3 className="text-xs font-bold text-[#102C4E] uppercase tracking-wider">
                       Technical Parameters
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                       {service.technicalDetails.map((tech, tIdx) => (
-                        <div key={tIdx} className="bg-white p-2.5 rounded border border-slate-200/80">
+                        <div
+                          key={tIdx}
+                          className="bg-white p-2.5 rounded border border-slate-200/80 hover-lift transition-all"
+                        >
                           <p className="text-slate-500 font-medium">{tech.label}</p>
                           <p className="font-bold text-[#102C4E] mt-0.5">{tech.value}</p>
                         </div>
@@ -117,7 +121,7 @@ export default function ServicesPage() {
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0 shadow-2xs hover:rotate-6 transition-transform">
                       <IconComponent className="w-5 h-5" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
@@ -134,7 +138,7 @@ export default function ServicesPage() {
                   </p>
 
                   {/* Purpose */}
-                  <div className="bg-[#F8FAFC] p-4 rounded-lg border-l-4 border-[#F47B20]">
+                  <div className="bg-[#F8FAFC] p-4 rounded-lg border-l-4 border-[#F47B20] shadow-2xs">
                     <h3 className="text-sm font-bold text-[#102C4E] mb-1">Purpose of the Test:</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {service.purpose}
@@ -158,7 +162,7 @@ export default function ServicesPage() {
 
                   {/* Applications & Benefits in 2 cols */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    <div className="p-3.5 bg-[#F3F6F9] rounded-lg">
+                    <div className="p-3.5 bg-[#F3F6F9] rounded-lg border border-slate-200/80 hover-lift">
                       <h4 className="text-xs font-bold text-[#102C4E] uppercase mb-1.5">
                         Key Applications:
                       </h4>
@@ -172,7 +176,7 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    <div className="p-3.5 bg-[#F3F6F9] rounded-lg">
+                    <div className="p-3.5 bg-[#F3F6F9] rounded-lg border border-slate-200/80 hover-lift">
                       <h4 className="text-xs font-bold text-[#102C4E] uppercase mb-1.5">
                         Client Value:
                       </h4>
@@ -191,13 +195,13 @@ export default function ServicesPage() {
                   <div className="flex flex-wrap items-center gap-3 pt-3">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-bold text-xs sm:text-sm text-white bg-[#F47B20] hover:bg-[#D9650D] shadow-xs transition-colors"
+                      className="inline-flex items-center justify-center px-6 py-2.5 rounded-md font-bold text-xs sm:text-sm text-white bg-[#F47B20] hover:bg-[#D9650D] shadow-xs hover:shadow-md transition-all hover-lift active:scale-95"
                     >
                       Get Quote
                     </Link>
                     <a
                       href={`tel:${siteConfig.phoneRaw}`}
-                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md font-bold text-xs sm:text-sm text-[#102C4E] bg-[#F3F6F9] hover:bg-[#FFF4EC] hover:text-[#F47B20] border border-slate-200 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-md font-bold text-xs sm:text-sm text-[#102C4E] bg-[#F3F6F9] hover:bg-[#FFF4EC] hover:text-[#F47B20] border border-slate-200 transition-all hover-lift active:scale-95"
                     >
                       <Phone className="w-3.5 h-3.5 text-[#F47B20]" />
                       <span>Call Now</span>
@@ -240,7 +244,7 @@ export default function ServicesPage() {
           <div className="pt-2 flex justify-center gap-4">
             <Link
               href="/contact"
-              className="px-6 py-2.5 rounded-md font-bold text-sm bg-[#F47B20] hover:bg-[#D9650D] text-white transition-colors"
+              className="px-6 py-2.5 rounded-md font-bold text-sm bg-[#F47B20] hover:bg-[#D9650D] text-white transition-all hover-lift active:scale-95"
             >
               Contact Now
             </Link>
@@ -250,4 +254,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-

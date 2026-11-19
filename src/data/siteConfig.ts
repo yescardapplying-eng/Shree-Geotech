@@ -508,3 +508,175 @@ export const contactFAQs: FAQItem[] = [
   },
 ];
 
+export interface ClientItem {
+  srNo: number;
+  name: string;
+  location: string;
+  category: string;
+  region: 'Maharashtra' | 'National' | 'International';
+}
+
+export const valuableClients: ClientItem[] = [
+  {
+    srNo: 1,
+    name: 'Gradiant (IND) Ltd',
+    location: 'Chennai, Tamil Nadu',
+    category: 'Water & Industrial Infrastructure',
+    region: 'National',
+  },
+  {
+    srNo: 2,
+    name: 'Bhavana Enterprises',
+    location: 'Mumbai, Maharashtra',
+    category: 'Construction & Development',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 3,
+    name: 'Ocean Energy',
+    location: 'Mumbai, Maharashtra',
+    category: 'Energy & Marine Engineering',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 4,
+    name: 'Abha Narain Lambah Associates',
+    location: 'Mumbai, Maharashtra',
+    category: 'Heritage Conservation & Architecture',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 5,
+    name: 'South Seas Distilleries & Breweries Pvt Ltd',
+    location: 'Mumbai, Maharashtra',
+    category: 'Industrial Manufacturing Plants',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 6,
+    name: 'Jenny Construction',
+    location: 'Tarapur, Maharashtra',
+    category: 'Civil & Industrial Contracting',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 7,
+    name: 'AARVANSS BUILDWELL AND INFRACON LLP',
+    location: 'Ghaziabad, Uttar Pradesh',
+    category: 'Infrastructure & High-Rise Buildings',
+    region: 'National',
+  },
+  {
+    srNo: 8,
+    name: 'Alamas Architecture and Consultant',
+    location: 'Dubai, UAE',
+    category: 'International Architecture & Planning',
+    region: 'International',
+  },
+  {
+    srNo: 9,
+    name: 'Star Cement',
+    location: 'Ghana, West Africa',
+    category: 'Heavy Industrial & Cement Production',
+    region: 'International',
+  },
+  {
+    srNo: 10,
+    name: 'Sethi Brothers',
+    location: 'Liberia, West Africa',
+    category: 'Commercial Infrastructure & Trading',
+    region: 'International',
+  },
+  {
+    srNo: 11,
+    name: 'Promac IND Ltd & Madras Industrial Technology',
+    location: 'Bangalore & Chennai',
+    category: 'Heavy Engineering & Industrial Tech',
+    region: 'National',
+  },
+  {
+    srNo: 12,
+    name: 'Ganesh Benzoplast Ltd',
+    location: 'Goregaon, Mumbai',
+    category: 'Chemical Logistics & Storage Terminals',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 13,
+    name: 'NUVOCO VISTAS CORPORATION LIMITED',
+    location: 'Mumbai, Maharashtra',
+    category: 'Building Materials & Ready-Mix Concrete',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 14,
+    name: 'Gradient India Ltd',
+    location: 'Chennai, Tamil Nadu',
+    category: 'Environmental Engineering & Industrial EPC',
+    region: 'National',
+  },
+  {
+    srNo: 15,
+    name: 'ARINEM Consultancy Services Pvt Ltd',
+    location: 'New Delhi',
+    category: 'Multidisciplinary Engineering Consultancy',
+    region: 'National',
+  },
+  {
+    srNo: 16,
+    name: 'THE NOVARCH (Architects, Engineers, Planners)',
+    location: 'New Delhi',
+    category: 'Integrated Architecture & Master Planning',
+    region: 'National',
+  },
+  {
+    srNo: 17,
+    name: 'Viraj Profile Pvt. Ltd',
+    location: 'Palghar, Thane, Maharashtra',
+    category: 'Stainless Steel Manufacturing & Forging Plants',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 18,
+    name: 'PRINCIPAL ACS ENGINEERING INDIA PVT LTD',
+    location: 'Hyderabad, Telangana',
+    category: 'Industrial Systems & Structural Engineering',
+    region: 'National',
+  },
+  {
+    srNo: 19,
+    name: 'ASL Logistics Pvt Ltd',
+    location: 'Mumbai, Maharashtra',
+    category: 'Warehousing Logistics & Supply Chain Yards',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 20,
+    name: 'M/s. Magicrete Building Solution Pvt Ltd',
+    location: 'Surat, Gujarat',
+    category: 'Precast & AAC Block Manufacturing Infrastructure',
+    region: 'National',
+  },
+  {
+    srNo: 21,
+    name: 'Ponds Rubber',
+    location: 'Dombivli, Thane, Maharashtra',
+    category: 'Rubber Polymer Manufacturing Units',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 22,
+    name: 'Solitaire Builders and Developer',
+    location: 'Malad, Mumbai, Maharashtra',
+    category: 'Residential & Commercial Real Estate',
+    region: 'Maharashtra',
+  },
+  {
+    srNo: 23,
+    name: 'M/s. Om Sai Electricals and Enterprise',
+    location: 'Nashik, Maharashtra',
+    category: 'Electrical Substations & Transmission Infrastructure',
+    region: 'Maharashtra',
+  },
+];
+

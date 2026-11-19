@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/data/siteConfig';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.domain;
   const lastModified = new Date();
@@ -13,35 +15,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/services/`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/about/`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/contact/`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/privacy-policy/`,
       lastModified,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms-and-conditions`,
+      url: `${baseUrl}/terms-and-conditions/`,
       lastModified,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
   ];
 }
-

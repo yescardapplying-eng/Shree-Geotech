@@ -27,7 +27,7 @@ export function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMessage('');
@@ -40,32 +40,27 @@ export function ContactForm() {
     }
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const waMsg = `Hello Shree Geotech,%0A%0AI would like to request an engineering proposal:%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(formData.email || 'Not provided')}%0A*Service:* ${encodeURIComponent(formData.service)}%0A*Project Location:* ${encodeURIComponent(formData.location)}%0A*Details:* ${encodeURIComponent(formData.message || 'Please contact me with more information.')}`;
 
-      const result = await response.json();
+      const waUrl = `https://wa.me/919270712338?text=${waMsg}`;
 
-      if (response.ok && result.success) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          service: servicesData[0].title,
-          location: '',
-          message: '',
-          honeypot: '',
-        });
-      } else {
-        setStatus('error');
-        setErrorMessage(result.error || 'Failed to submit enquiry. Please call us directly.');
+      if (typeof window !== 'undefined') {
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
       }
+
+      setStatus('success');
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        service: servicesData[0].title,
+        location: '',
+        message: '',
+        honeypot: '',
+      });
     } catch {
       setStatus('error');
-      setErrorMessage('Network error occurred. Please try calling us at +91 92707 12338.');
+      setErrorMessage('Please contact us directly at +91 92707 12338 or via WhatsApp.');
     }
   };
 
@@ -74,7 +69,7 @@ export function ContactForm() {
       <div className="mb-6 space-y-1">
         <h3 className="text-xl font-bold text-[#102C4E]">Request an Engineering Proposal</h3>
         <p className="text-xs sm:text-sm text-slate-500">
-          Fill in your project details below to receive a geotechnical testing estimate.
+          Fill in your project details below to receive a geotechnical testing estimate via WhatsApp/call.
         </p>
       </div>
 
@@ -82,10 +77,10 @@ export function ContactForm() {
         <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-start gap-3">
           <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
           <div className="text-sm">
-            <p className="font-bold">Enquiry Received Successfully!</p>
+            <p className="font-bold">WhatsApp Enquiry Launched!</p>
             <p className="mt-0.5 text-xs text-emerald-700">
-              Thank you for contacting Shree Geotech. Our engineering team will review your project
-              scope and call you back shortly.
+              Your geotechnical proposal details have been prepared for Shree Geotech. You can also
+              call us directly at +91 92707 12338 for instant discussion.
             </p>
           </div>
         </div>
@@ -146,7 +141,7 @@ export function ContactForm() {
               required
               value={formData.phone}
               onChange={handleChange}
-              placeholder="e.g. 98200 12345"
+              placeholder="+91 98765 43210"
               className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:border-[#F47B20] focus:ring-2 focus:ring-[#F47B20]/20 text-sm text-[#102C4E] placeholder:text-slate-400 outline-none transition-colors"
             />
           </div>
@@ -161,13 +156,13 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="e.g. rajesh@company.com"
+              placeholder="rajesh@example.com"
               className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:border-[#F47B20] focus:ring-2 focus:ring-[#F47B20]/20 text-sm text-[#102C4E] placeholder:text-slate-400 outline-none transition-colors"
             />
           </div>
         </div>
 
-        {/* Service Required & Project Location Row */}
+        {/* Service & Location Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="service" className="block text-xs font-bold text-[#102C4E] uppercase mb-1">
@@ -176,17 +171,18 @@ export function ContactForm() {
             <select
               id="service"
               name="service"
+              required
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:border-[#F47B20] focus:ring-2 focus:ring-[#F47B20]/20 text-sm text-[#102C4E] bg-white outline-none transition-colors"
+              className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:border-[#F47B20] focus:ring-2 focus:ring-[#F47B20]/20 text-sm text-[#102C4E] outline-none transition-colors bg-white"
             >
-              {servicesData.map((svc) => (
-                <option key={svc.id} value={svc.title}>
-                  {svc.title}
+              {servicesData.map((s) => (
+                <option key={s.id} value={s.title}>
+                  {s.title}
                 </option>
               ))}
-              <option value="Complete Soil Investigation Package">
-                Complete Soil Investigation Package
+              <option value="Complete Geotechnical Site Investigation">
+                Complete Geotechnical Investigation Package
               </option>
             </select>
           </div>
@@ -248,4 +244,3 @@ export function ContactForm() {
     </div>
   );
 }
-

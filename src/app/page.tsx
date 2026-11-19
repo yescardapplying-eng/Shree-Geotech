@@ -7,6 +7,7 @@ import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { IndustriesSection } from '@/components/home/IndustriesSection';
 import { ProcessSection } from '@/components/home/ProcessSection';
 import { LocationsSection } from '@/components/home/LocationsSection';
+import { ValuableClientsSection } from '@/components/home/ValuableClientsSection';
 import { TestimonialCarousel } from '@/components/home/TestimonialCarousel';
 import { FAQSection } from '@/components/home/FAQSection';
 import { CTASection } from '@/components/home/CTASection';
@@ -39,6 +40,7 @@ export default function HomePage() {
       <IndustriesSection />
       <ProcessSection />
       <LocationsSection />
+      <ValuableClientsSection />
       <TestimonialCarousel />
       <FAQSection />
       <CTASection />

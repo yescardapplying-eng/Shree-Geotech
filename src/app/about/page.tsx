@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { aboutFAQs, siteConfig, industriesServed, workProcessSteps } from '@/data/siteConfig';
 import { Accordion } from '@/components/common/Accordion';
+import { ValuableClientsSection } from '@/components/home/ValuableClientsSection';
 
 export const metadata: Metadata = {
   title: 'About Shree Geotech | Geotechnical Investigation & Soil Testing',
@@ -186,6 +187,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Valuable Clients & Engineering Partners */}
+      <ValuableClientsSection />
 
       {/* Regional Service Focus */}
       <section className="py-16 bg-[#102C4E] text-white">

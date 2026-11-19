@@ -13,15 +13,15 @@ export function Footer() {
           <div className="space-y-4">
             <Link
               href="/"
-              className="inline-block bg-white px-3.5 py-2.5 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+              className="inline-flex items-center bg-white px-3 py-2 rounded-xl shadow-xs border border-white/20 hover:shadow-md transition-shadow"
               aria-label="Shree Geotech"
             >
-              <div className="relative w-64 sm:w-72 h-16 sm:h-18">
+              <div className="relative w-40 sm:w-44 h-11 sm:h-12">
                 <Image
                   src={siteConfig.brandAssets.logo}
                   alt="Shree Geotech Logo"
                   fill
-                  sizes="(max-width: 640px) 256px, 288px"
+                  sizes="(max-width: 640px) 160px, 176px"
                   className="object-contain object-left"
                   priority
                 />

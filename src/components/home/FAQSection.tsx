@@ -6,7 +6,7 @@ export function FAQSection() {
   return (
     <section className="py-16 sm:py-20 bg-[#F3F6F9]" id="faqs">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#102C4E] text-xs font-bold uppercase tracking-wider shadow-2xs">
             Frequently Asked Questions
           </div>
@@ -20,7 +20,7 @@ export function FAQSection() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-xs border border-slate-200">
+        <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-xs border border-slate-200 reveal-on-scroll delay-150">
           <Accordion items={homeFAQs} idPrefix="home-faq" />
         </div>
       </div>

@@ -6,7 +6,7 @@ export function IntroSection() {
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F3F6F9] text-[#102C4E] text-xs font-bold uppercase tracking-wider">
             About Our Practice
           </div>
@@ -22,7 +22,7 @@ export function IntroSection() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors">
+          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors reveal-on-scroll delay-100 hover-lift">
             <div className="w-12 h-12 rounded-lg bg-[#102C4E] text-[#F47B20] flex items-center justify-center mb-4">
               <Compass className="w-6 h-6" />
             </div>
@@ -34,7 +34,7 @@ export function IntroSection() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors">
+          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors reveal-on-scroll delay-200 hover-lift">
             <div className="w-12 h-12 rounded-lg bg-[#102C4E] text-[#F47B20] flex items-center justify-center mb-4">
               <ShieldAlert className="w-6 h-6" />
             </div>
@@ -46,7 +46,7 @@ export function IntroSection() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors">
+          <div className="p-6 rounded-xl bg-[#F3F6F9] border border-slate-200/80 hover:border-[#F47B20]/40 transition-colors reveal-on-scroll delay-300 hover-lift">
             <div className="w-12 h-12 rounded-lg bg-[#102C4E] text-[#F47B20] flex items-center justify-center mb-4">
               <FileSpreadsheet className="w-6 h-6" />
             </div>
@@ -59,7 +59,7 @@ export function IntroSection() {
           </div>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 text-center reveal-on-scroll delay-200">
           <Link
             href="/about"
             className="inline-flex items-center justify-center px-6 py-3 rounded-md font-bold text-sm text-[#102C4E] bg-[#F3F6F9] hover:bg-[#FFF4EC] hover:text-[#F47B20] border border-slate-200 transition-colors"

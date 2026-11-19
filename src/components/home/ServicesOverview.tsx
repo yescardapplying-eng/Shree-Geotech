@@ -15,7 +15,7 @@ export function ServicesOverview() {
   return (
     <section className="py-16 sm:py-20 bg-[#F3F6F9]" id="services-overview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#F47B20] text-xs font-bold uppercase tracking-wider shadow-2xs hover-lift">
             Technical Capabilities
           </div>
@@ -30,14 +30,14 @@ export function ServicesOverview() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {servicesData.map((service) => {
+          {servicesData.map((service, idx) => {
             const IconComponent =
               iconMap[service.iconName as keyof typeof iconMap] || ShieldCheck;
 
             return (
               <div
                 key={service.id}
-                className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover-icon-wiggle"
+                className={`group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover-icon-wiggle reveal-on-scroll delay-${(idx + 1) * 100}`}
               >
                 {/* Image Container with Normal Zoom & Pan Hover Animation */}
                 <div className="relative h-52 w-full overflow-hidden bg-slate-100 service-img-wrapper cursor-pointer">

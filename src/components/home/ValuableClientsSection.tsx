@@ -1,35 +1,27 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { valuableClients, ClientItem } from '@/data/siteConfig';
-import { Building2, MapPin, Globe, ShieldCheck, ArrowRight, Search, Award } from 'lucide-react';
+import { valuableClients } from '@/data/siteConfig';
+import { MapPin, Globe, ArrowRight, Award } from 'lucide-react';
+
+// Select 6 premier clients representing International, National, and Maharashtra projects
+const featuredClientSrNos = [8, 9, 14, 7, 2, 12]; // Alamas (Dubai), Star Cement (Ghana), Gradient India (Chennai), AARVANSS (Ghaziabad), Bhavana Enterprises (Vapi/Maha), Ganesh Benzoplast (Mumbai)
+const homepageClients = valuableClients.filter((c) => featuredClientSrNos.includes(c.srNo));
 
 export function ValuableClientsSection() {
-  const [selectedRegion, setSelectedRegion] = useState<'All' | 'Maharashtra' | 'National' | 'International'>('All');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredClients = valuableClients.filter((client) => {
-    const matchesRegion = selectedRegion === 'All' || client.region === selectedRegion;
-    const matchesSearch =
-      client.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      client.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      client.category.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesRegion && matchesSearch;
-  });
-
   return (
     <section className="py-16 sm:py-24 bg-[#F8FAFC] border-y border-slate-200" id="valuable-clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16">
+        {/* Section Header with On-Scroll Reveal */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-16 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#102C4E]/10 text-[#102C4E] text-xs font-bold uppercase tracking-wider">
             <Award className="w-4 h-4 text-[#F47B20]" />
             <span>Proven Industry Track Record</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#102C4E] tracking-tight">
-            Our Valuable Clients &amp; Partners
+            Our Valuable Clients
           </h2>
 
           <div className="w-20 h-1 bg-[#F47B20] mx-auto rounded-full" />
@@ -41,68 +33,37 @@ export function ValuableClientsSection() {
           </p>
         </div>
 
-        {/* Highlight Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center">
+        {/* Highlight Stats Bar with Staggered On-Scroll Reveal */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center reveal-on-scroll delay-100 hover-lift">
             <p className="text-2xl sm:text-3xl font-extrabold text-[#102C4E]">23+</p>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Corporate Clients</p>
           </div>
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center reveal-on-scroll delay-150 hover-lift">
             <p className="text-2xl sm:text-3xl font-extrabold text-[#F47B20]">4</p>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Global Locations</p>
           </div>
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center reveal-on-scroll delay-200 hover-lift">
             <p className="text-2xl sm:text-3xl font-extrabold text-[#102C4E]">100%</p>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">IS Code Adherence</p>
           </div>
-          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center">
+          <div className="bg-white p-4 sm:p-5 rounded-xl border border-slate-200 shadow-2xs text-center reveal-on-scroll delay-250 hover-lift">
             <p className="text-2xl sm:text-3xl font-extrabold text-[#F47B20]">Zero</p>
             <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Settlement Failures</p>
           </div>
         </div>
 
-        {/* Filter Tabs & Search Controls */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-xs mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Region Tabs */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            {(['All', 'Maharashtra', 'National', 'International'] as const).map((region) => (
-              <button
-                key={region}
-                type="button"
-                onClick={() => setSelectedRegion(region)}
-                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                  selectedRegion === region
-                    ? 'bg-[#102C4E] text-white shadow-sm'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
-              >
-                {region === 'All' ? 'All Clients (23)' : region}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search client or city..."
-              className="w-full pl-9 pr-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-xs sm:text-sm text-[#102C4E] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#F47B20] focus:bg-white transition-all"
-            />
-          </div>
-        </div>
-
-        {/* Responsive Client Cards Grid (Mobile, Tablet, Desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {filteredClients.map((client: ClientItem) => (
+        {/* 6 Featured Client Cards (Maharashtra, National & International) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {homepageClients.map((client, idx) => (
             <div
               key={client.srNo}
-              className="bg-white rounded-xl p-5 sm:p-6 border border-slate-200 hover:border-[#F47B20] hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              className={`bg-white rounded-xl p-5 sm:p-6 border border-slate-200 hover:border-[#F47B20] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group reveal-on-scroll delay-${
+                (idx + 1) * 100
+              }`}
             >
               <div>
-                {/* Card Top: Serial Number & Region Tag */}
+                {/* Top Badge: Serial Number & Region */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
                   <span className="text-xs font-black text-[#F47B20] bg-[#FFF4EC] px-2.5 py-1 rounded-md">
                     Sr. No {client.srNo < 10 ? `0${client.srNo}` : client.srNo}
@@ -136,37 +97,32 @@ export function ValuableClientsSection() {
                 </div>
               </div>
 
-              {/* Card Bottom: Sector / Industry Classification */}
+              {/* Card Bottom: Sector */}
               <div className="mt-4 pt-3 border-t border-slate-100">
                 <span className="text-[11px] font-semibold text-slate-500 block leading-tight">
-                  Sector: <span className="text-[#102C4E]">{client.category}</span>
+                  Sector: <span className="text-[#102C4E] font-medium">{client.category}</span>
                 </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Empty Search State */}
-        {filteredClients.length === 0 && (
-          <div className="text-center py-12 bg-white rounded-xl border border-dashed border-slate-300 p-6">
-            <Building2 className="w-10 h-10 text-slate-400 mx-auto mb-2" />
-            <p className="text-sm font-semibold text-[#102C4E]">No clients matched &quot;{searchQuery}&quot;</p>
-            <p className="text-xs text-slate-500 mt-1">Try searching by city (e.g. Mumbai, Chennai, Dubai) or clear the search filter.</p>
-            <button
-              type="button"
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedRegion('All');
-              }}
-              className="mt-3 px-4 py-1.5 rounded-md bg-[#102C4E] text-white text-xs font-bold"
-            >
-              Reset Filters
-            </button>
-          </div>
-        )}
+        {/* Call to Action Button Below the 6 Cards: Max 2 Words ("Our Clients") */}
+        <div className="mt-10 sm:mt-12 text-center reveal-on-scroll delay-200">
+          <Link
+            href="/clients"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white bg-[#102C4E] hover:bg-[#F47B20] shadow-md hover:shadow-xl transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F47B20]"
+          >
+            <span>Our Clients</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <p className="text-xs text-slate-500 mt-2 font-medium">
+            Explore our complete directory of 23+ corporate engineering partners
+          </p>
+        </div>
 
-        {/* Bottom CTA Bar */}
-        <div className="mt-12 sm:mt-16 bg-[#102C4E] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        {/* Bottom Geotechnical Inquiry Bar */}
+        <div className="mt-12 sm:mt-16 bg-[#102C4E] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md reveal-on-scroll delay-300">
           <div className="space-y-1.5 text-center md:text-left">
             <h3 className="text-xl sm:text-2xl font-bold">Require Reliable Subsurface Soil Testing?</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
@@ -186,10 +142,10 @@ export function ValuableClientsSection() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              href="/contact"
+              href="/clients"
               className="px-6 py-3 rounded-lg font-bold text-xs sm:text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
             >
-              <span>Contact Page</span>
+              <span>Our Clients</span>
             </Link>
           </div>
         </div>

@@ -22,7 +22,7 @@ export function WhyChooseUs() {
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F3F6F9] text-[#102C4E] text-xs font-bold uppercase tracking-wider hover-lift">
             Our Advantages
           </div>
@@ -44,7 +44,7 @@ export function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#F47B20]/40 hover-lift group transition-all duration-300 cursor-pointer"
+                className={`p-6 rounded-xl border border-slate-200 bg-white hover:border-[#F47B20]/40 hover-lift group transition-all duration-300 cursor-pointer reveal-on-scroll delay-${((index % 3) + 1) * 100}`}
               >
                 <div className="w-12 h-12 rounded-lg bg-[#F3F6F9] group-hover:bg-[#102C4E] text-[#102C4E] group-hover:text-[#F47B20] flex items-center justify-center transition-all duration-300 mb-4 group-hover:rotate-6 group-hover:scale-110">
                   <IconComponent className="w-6 h-6 transition-transform duration-300" />

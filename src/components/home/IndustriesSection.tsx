@@ -15,7 +15,7 @@ export function IndustriesSection() {
   return (
     <section className="py-16 sm:py-20 bg-[#F3F6F9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#102C4E] text-xs font-bold uppercase tracking-wider shadow-2xs hover-lift">
             Sectors We Support
           </div>
@@ -36,7 +36,7 @@ export function IndustriesSection() {
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl border border-slate-200/80 hover:border-[#102C4E] shadow-2xs hover-lift transition-all duration-300 group cursor-pointer"
+                className={`bg-white p-6 rounded-xl border border-slate-200/80 hover:border-[#102C4E] shadow-2xs hover-lift transition-all duration-300 group cursor-pointer reveal-on-scroll delay-${((index % 3) + 1) * 100}`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0 group-hover:bg-[#102C4E] group-hover:text-white transition-all duration-300 group-hover:scale-110">

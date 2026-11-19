@@ -73,6 +73,15 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/clients"
+                  className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F47B20]" />
+                  <span>Our Clients</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="hover:text-[#F47B20] transition-colors inline-flex items-center gap-1.5 hover-lift"
                 >

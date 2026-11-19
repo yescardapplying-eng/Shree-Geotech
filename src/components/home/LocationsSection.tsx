@@ -7,7 +7,7 @@ export function LocationsSection() {
   return (
     <section className="py-16 sm:py-20 bg-[#F3F6F9]" id="service-locations">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-white text-[#102C4E] text-xs font-bold uppercase tracking-wider shadow-2xs hover-lift">
             Regional Coverage
           </div>
@@ -22,10 +22,10 @@ export function LocationsSection() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {siteConfig.locations.map((loc) => (
+          {siteConfig.locations.map((loc, idx) => (
             <div
               key={loc.name}
-              className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs hover-lift hover:border-[#F47B20]/50 transition-all flex items-start gap-3.5 group cursor-pointer"
+              className={`bg-white p-5 rounded-xl border border-slate-200/80 shadow-2xs hover-lift hover:border-[#F47B20]/50 transition-all flex items-start gap-3.5 group cursor-pointer reveal-on-scroll delay-${((idx % 3) + 1) * 100}`}
             >
               <div className="w-10 h-10 rounded-lg bg-[#FFF4EC] text-[#F47B20] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#F47B20] group-hover:text-white transition-all duration-300 group-hover:scale-110">
                 <MapPin className="w-5 h-5 transition-transform duration-300" />
@@ -41,7 +41,7 @@ export function LocationsSection() {
         </div>
 
         {/* Local Geological Brief (Natural Local SEO) */}
-        <div className="mt-10 p-6 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm leading-relaxed max-w-4xl mx-auto shadow-2xs hover:shadow-md transition-shadow">
+        <div className="mt-10 p-6 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm leading-relaxed max-w-4xl mx-auto shadow-2xs hover:shadow-md transition-shadow reveal-on-scroll delay-200">
           <p className="font-semibold text-[#102C4E] mb-2">
             Local Geological Context Across Mumbai Metropolitan Region:
           </p>

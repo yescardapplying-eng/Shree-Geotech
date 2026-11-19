@@ -13,7 +13,7 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Heading & Value Proposition */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 reveal-on-scroll">
             {/* Engineering Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs sm:text-sm font-medium text-slate-200 backdrop-blur-xs">
               <span className="w-2 h-2 rounded-full bg-[#F47B20]" />
@@ -83,7 +83,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Hero Image with Frame and Badges */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative reveal-on-scroll delay-200">
             <div className="relative rounded-xl overflow-hidden shadow-2xl border-2 border-white/10 bg-slate-800 aspect-4/3 sm:aspect-16/11">
               <Image
                 src="/images/hero-soil-investigation.jpg"

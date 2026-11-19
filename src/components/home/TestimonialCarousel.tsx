@@ -124,7 +124,7 @@ export function TestimonialCarousel() {
     <section className="py-16 sm:py-20 bg-white" id="google-reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section with Google Rating Summary Badge */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F3F6F9] border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs hover-lift">
             <GoogleIcon className="w-4 h-4" />
             <span>Google Reviews & Verification</span>
@@ -159,7 +159,7 @@ export function TestimonialCarousel() {
 
         {/* Carousel Container */}
         <div
-          className="mt-12 max-w-3xl mx-auto relative"
+          className="mt-12 max-w-3xl mx-auto relative reveal-on-scroll delay-150"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}

@@ -45,7 +45,7 @@ export default function ServicesPage() {
       {/* Page Header Banner */}
       <section className="bg-[#102C4E] text-white py-14 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F47B20_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-slate-200">
             Field & Laboratory Geotechnical Solutions
           </div>
@@ -71,7 +71,7 @@ export default function ServicesPage() {
             <article
               key={service.id}
               id={service.slug}
-              className="scroll-mt-28 border-b border-slate-200 pb-16 last:border-b-0 last:pb-0"
+              className="scroll-mt-28 border-b border-slate-200 pb-16 last:border-b-0 last:pb-0 reveal-on-scroll delay-100"
             >
               <div
                 className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center ${
@@ -217,7 +217,7 @@ export default function ServicesPage() {
       {/* Services FAQs (Exactly 3 FAQs as requested) */}
       <section className="py-16 bg-[#F3F6F9] border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-10">
+          <div className="text-center space-y-3 mb-10 reveal-on-scroll">
             <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
               Technical Inquiries
             </span>
@@ -227,14 +227,14 @@ export default function ServicesPage() {
             <div className="w-12 h-1 bg-[#F47B20] mx-auto rounded-full" />
           </div>
 
-          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200">
+          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200 reveal-on-scroll delay-150">
             <Accordion items={servicesFAQs} idPrefix="service-faq" />
           </div>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-12 bg-[#102C4E] text-white text-center">
+      <section className="py-12 bg-[#102C4E] text-white text-center reveal-on-scroll">
         <div className="max-w-4xl mx-auto px-4 space-y-4">
           <h3 className="text-2xl font-bold">Require a Customized Soil Testing Proposal?</h3>
           <p className="text-sm text-slate-300">

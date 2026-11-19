@@ -39,7 +39,7 @@ export default function AboutPage() {
       {/* Banner */}
       <section className="bg-[#102C4E] text-white py-14 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F47B20_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-slate-200">
             Professional Engineering Practice
           </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Image */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative reveal-on-scroll delay-100">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 aspect-4/3 sm:aspect-square bg-slate-100">
                 <Image
                   src="/images/hero-soil-investigation.jpg"
@@ -81,7 +81,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column: Narrative */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-6 reveal-on-scroll delay-200">
               <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
                 Technical Mission
               </span>
@@ -192,7 +192,7 @@ export default function AboutPage() {
       <ValuableClientsSection />
 
       {/* Regional Service Focus */}
-      <section className="py-16 bg-[#102C4E] text-white">
+      <section className="py-16 bg-[#102C4E] text-white reveal-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Serving Mumbai, Thane, Navi Mumbai & Surrounding Regions
@@ -218,7 +218,7 @@ export default function AboutPage() {
       {/* About FAQs (Exactly 3 FAQs) */}
       <section className="py-16 bg-[#F3F6F9] border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-10">
+          <div className="text-center space-y-3 mb-10 reveal-on-scroll">
             <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
               General Inquiries
             </span>
@@ -228,14 +228,14 @@ export default function AboutPage() {
             <div className="w-12 h-1 bg-[#F47B20] mx-auto rounded-full" />
           </div>
 
-          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200">
+          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200 reveal-on-scroll delay-150">
             <Accordion items={aboutFAQs} idPrefix="about-faq" />
           </div>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-12 bg-white text-center border-t border-slate-200">
+      <section className="py-12 bg-white text-center border-t border-slate-200 reveal-on-scroll">
         <div className="max-w-4xl mx-auto px-4 space-y-4">
           <h3 className="text-2xl font-bold text-[#102C4E]">Speak With Our Engineering Team</h3>
           <p className="text-sm text-slate-600">

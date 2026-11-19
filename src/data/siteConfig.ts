@@ -680,3 +680,22 @@ export const valuableClients: ClientItem[] = [
   },
 ];
 
+export const clientsFAQs: FAQItem[] = [
+  {
+    question: 'How does Shree Geotech execute multi-location investigations across India and overseas?',
+    answer:
+      'Shree Geotech maintains rapidly mobilizable hydraulic rotary drilling rigs, calibrated in-situ testing kits (SPT, Plate Load, Dynamic Cone Penetration), and senior geotechnical engineers capable of mobilizing to sites across Maharashtra, national industrial corridors, and international project locations. All investigation procedures strictly adhere to IS 1892, IS 2131, and international ASTM/BS geotechnical codes.',
+  },
+  {
+    question: 'Are client geotechnical data, borehole logs, and laboratory reports kept confidential?',
+    answer:
+      'Yes, 100%. Client project blueprints, stratum logs, laboratory shear/consolidation data, and foundation recommendations are treated as proprietary intellectual property. We sign standard Non-Disclosure Agreements (NDAs) and maintain encrypted, secure archival systems for all technical reports.',
+  },
+  {
+    question: 'Can Shree Geotech partner as an approved geotechnical testing consultant on EPC and government tenders?',
+    answer:
+      'Yes. Shree Geotech regularly functions as the authorized geotechnical engineering consultant for Tier-1 EPC contractors, infrastructure developers, and municipal bodies. We provide calibrated apparatus documentation, certified test logs, and formal engineering certifications required for statutory compliance and structural authority approvals.',
+  },
+];
+
+

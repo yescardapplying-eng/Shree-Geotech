@@ -5,7 +5,7 @@ export function ProcessSection() {
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F3F6F9] text-[#102C4E] text-xs font-bold uppercase tracking-wider hover-lift">
             Methodology
           </div>
@@ -20,10 +20,10 @@ export function ProcessSection() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          {workProcessSteps.map((step) => (
+          {workProcessSteps.map((step, index) => (
             <div
               key={step.step}
-              className="relative flex flex-col items-start group p-5 rounded-xl border border-transparent hover:border-slate-200 hover:bg-[#F3F6F9] hover-lift transition-all duration-300"
+              className={`relative flex flex-col items-start group p-5 rounded-xl border border-transparent hover:border-slate-200 hover:bg-[#F3F6F9] hover-lift transition-all duration-300 reveal-on-scroll delay-${(index + 1) * 100}`}
             >
               {/* Step number badge */}
               <div className="w-14 h-14 rounded-xl bg-[#102C4E] text-[#F47B20] flex items-center justify-center font-extrabold text-xl shadow-md group-hover:bg-[#F47B20] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 mb-5">

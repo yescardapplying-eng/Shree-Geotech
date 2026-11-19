@@ -31,7 +31,7 @@ export default function ContactPage() {
       {/* Banner */}
       <section className="bg-[#102C4E] text-white py-14 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F47B20_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-slate-200">
             Prompt Technical Support
           </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Left Column: Contact Details */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-8 reveal-on-scroll delay-100">
               <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
@@ -164,13 +164,13 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Contact Enquiry Form */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 reveal-on-scroll delay-200">
               <ContactForm />
             </div>
           </div>
 
           {/* Embedded Google Maps */}
-          <div className="mt-16">
+          <div className="mt-16 reveal-on-scroll delay-150">
             <div className="text-center max-w-xl mx-auto mb-6">
               <h2 className="text-2xl font-bold text-[#102C4E]">Office & Operations Map</h2>
               <p className="text-xs text-slate-500 mt-1">
@@ -185,7 +185,7 @@ export default function ContactPage() {
       {/* Contact FAQs (Exactly 3 FAQs) */}
       <section className="py-16 bg-white border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-10">
+          <div className="text-center space-y-3 mb-10 reveal-on-scroll">
             <span className="text-xs font-bold uppercase tracking-wider text-[#F47B20]">
               Inquiry Assistance
             </span>
@@ -195,7 +195,7 @@ export default function ContactPage() {
             <div className="w-12 h-1 bg-[#F47B20] mx-auto rounded-full" />
           </div>
 
-          <div className="bg-[#F3F6F9] rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200">
+          <div className="bg-[#F3F6F9] rounded-xl p-4 sm:p-8 shadow-xs border border-slate-200 reveal-on-scroll delay-150">
             <Accordion items={contactFAQs} idPrefix="contact-faq" />
           </div>
         </div>

@@ -22,7 +22,9 @@ ErrorDocument 404 /404.html
   # ----------------------------------------------------------------------------
   # 3. Redirect www to non-www (301 Permanent Redirect)
   # ----------------------------------------------------------------------------
-  RewriteCond %{HTTP_HOST} ^www\.shreegeotech\.co\.in$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^www\.shreegeotech\.co\.in$ [NC]
+  RewriteRule ^(.*)$ https://shreegeotech.co.in/$1 [L,R=301]
+
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
